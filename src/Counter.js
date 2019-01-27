@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
 
+    static defaultProps = {
+        maxValue: 10,
+        minValue: -10
+    }
     state = { counter: 0 }
 
     handlePlusClick = () => {
@@ -14,9 +18,11 @@ class Counter extends Component {
     }
 
     handleMinusClick = () => {
-        this.setState({
-            counter: this.state.counter - 1
-        })
+        if (this.state.counter > this.props.minValue) {
+            this.setState({
+                counter: this.state.counter - 1
+            })
+        }
     }
 
     render() {

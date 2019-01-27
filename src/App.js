@@ -10,7 +10,8 @@ class App extends Component {
     return (
       <div>
         <Counter maxValue={5} />
-        <Counter maxValue={3}/>
+        <Counter maxValue={3} />
+        <Counter/>
       </div>
     );
   }
