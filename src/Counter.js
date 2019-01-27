@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Counter extends Component {
 
@@ -6,6 +7,11 @@ class Counter extends Component {
         maxValue: 10,
         minValue: -10
     }
+
+    static propTypes = {
+        maxValue: PropTypes.number //dzieki temu konsola wykrywa blad zwiazany z innym typem zmiennej w App.js
+    }
+
     state = { counter: 0 }
 
     handlePlusClick = () => {
